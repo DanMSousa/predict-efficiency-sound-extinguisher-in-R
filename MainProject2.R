@@ -32,7 +32,7 @@ View(df_extinguisher)
 # verificar valores nulos:
 sum(is.na(df_extinguisher))
 colSums(is.na(df_extinguisher))
-#
+# não tem. Isso é bom
 
 
 
@@ -347,7 +347,7 @@ for (index in 1:length(predictions)) {
 
 cat("Total de acerto: ", as.integer(count_acertos))
 percent = (count_acertos / length(predictions)) * 100
-cat("Porcentagem de acertos no DataSet de teste: ", as.character(percent))
+cat("Porcentagem de acertos no DataSet de teste: ", as.character(percent)) # 87,25
 
 
 
@@ -368,7 +368,7 @@ save(model_learn_extnguisher_random_forest, file = "model_efficiency_extinguishe
 
 # carregar modelo e testar com dataset de teste com 20% dos dados:
 ?load
-model_loaded = load("model_efficiency_extinguisher_random_forest.RDATA.RDATA")
+model_loaded = load("model_efficiency_extinguisher_random_forest.RDATA")
 summary(model_loaded)
 View(test_df_cars)
 
@@ -410,4 +410,4 @@ cat("Total de acerto: ", as.integer(count_acertos))
 percent = (count_acertos / length(predictions)) * 100
 cat("Porcentagem de acertos no DataSet de teste: ", as.character(percent))
 
-# no caso do Random Forest quase fechou os 86%
+# no caso do random forest não ficou muito diferente da regressão linear nessa randomização do dataset.
